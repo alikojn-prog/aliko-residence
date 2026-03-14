@@ -176,6 +176,13 @@
     }
     .book-dropdown a:last-child { border-bottom: none; }
     .book-dropdown a:hover { background: rgba(6,15,35,.03); }
+    .book-dropdown-link {
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
     .book-dropdown a img {
       width: auto;
       height: auto;
@@ -651,6 +658,21 @@
       font-size: .8rem; font-weight: 300;
       line-height: 1.7; color: rgba(255,255,255,.45);
     }
+    .about-inline-link {
+      color: var(--white);
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,.35);
+      text-underline-offset: .18em;
+      transition: color .3s, text-decoration-color .3s;
+    }
+    .about-inline-link strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .about-inline-link:hover {
+      color: var(--gold);
+      text-decoration-color: var(--gold);
+    }
     .about-detail-text strong {
       display: block; font-weight: 600;
       font-size: .63rem; letter-spacing: .14em;
@@ -721,6 +743,7 @@
     .map-mobile-link {
       display: none;
     }
+
     @media (max-width: 960px) {
       .map-container iframe {
         display: none;
@@ -755,6 +778,170 @@
       font-size: .6rem; font-weight: 400;
       letter-spacing: .1em; color: rgba(255,255,255,.25);
     }
+    .bottom-panels {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: 1.4rem;
+      padding: 0 5rem 3.5rem;
+      align-items: start;
+    }
+    .direct-booking-panel,
+    .contact-section { min-width: 0; }
+    .booking-panel,
+    .contact-panel {
+      height: 100%;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      padding: 3rem 0;
+    }
+    .booking-header,
+    .contact-header {
+      max-width: 34rem;
+      margin-bottom: 2.25rem;
+      padding: 0 2.2rem;
+    }
+    .booking-header .section-title,
+    .contact-header .section-title { color: var(--white); }
+    .booking-header .section-body,
+    .contact-header .section-body {
+      color: rgba(255,255,255,.55);
+      margin-top: .9rem;
+    }
+    .direct-booking-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 0 2.2rem;
+    }
+    .booking-field {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .booking-field-full {
+      grid-column: 1 / -1;
+    }
+    .booking-field label {
+      font-size: .63rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+    }
+    .booking-input,
+    .booking-select,
+    .booking-textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--white);
+      font: inherit;
+      font-size: .85rem;
+      padding: .95rem 1rem;
+      outline: none;
+      transition: border-color .3s, background .3s;
+      appearance: none;
+      border-radius: 0;
+    }
+    .booking-input::placeholder,
+    .booking-textarea::placeholder {
+      color: rgba(255,255,255,.28);
+    }
+    .booking-input:focus,
+    .booking-select:focus,
+    .booking-textarea:focus {
+      border-color: rgba(255,255,255,.34);
+      background: rgba(255,255,255,.05);
+    }
+    .booking-select option {
+      color: var(--navy);
+    }
+    .booking-textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+    .booking-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.4rem 2.2rem 0;
+    }
+    .booking-note {
+      max-width: 24rem;
+      font-size: .72rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.38);
+    }
+    .booking-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .9rem 1.7rem;
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.7);
+      background: transparent;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .booking-submit:hover {
+      border-color: var(--white);
+      color: var(--white);
+      background: rgba(255,255,255,.05);
+    }
+    .booking-submit svg.feather {
+      width: 13px;
+      height: 13px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 2.2rem;
+    }
+    .contact-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      transition: border-color .3s, background .3s, color .3s;
+    }
+    .contact-card:hover {
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.05);
+    }
+    .contact-card-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: .12rem;
+    }
+    .contact-card-icon svg.feather {
+      width: 16px;
+      height: 16px;
+    }
+    .contact-card-label {
+      font-size: .63rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: .4rem;
+    }
+    .contact-card-value {
+      font-size: .95rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--white);
+      word-break: break-word;
+    }
     .about-bottom-social { display: flex; gap: 1.4rem; }
     .about-bottom-social a {
       display: flex; align-items: center; gap: .45rem;
@@ -775,6 +962,18 @@
        RESPONSIVE
     ──────────────────────────────────────────────────────────── */
     @media (max-width: 960px) {
+      .hero-label {
+        width: min(100vw - 2.5rem, 30rem);
+      }
+      .hero-label-text {
+        font-size: clamp(2.35rem, 11vw, 4.4rem);
+        letter-spacing: .08em;
+      }
+      .hero-label-sub {
+        font-size: .72rem;
+        letter-spacing: .22em;
+      }
+
       nav { padding: 1rem 1.2rem; }
       .nav-logo { width: 64px; }
       .nav-about-btn,
@@ -890,6 +1089,43 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .bottom-panels {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1.5rem 2.5rem;
+      }
+      .booking-panel,
+      .contact-section {
+        padding: 0;
+      }
+      .booking-panel,
+      .contact-panel {
+        padding: 2.4rem 0;
+      }
+      .booking-header,
+      .contact-header {
+        padding: 0 1rem;
+      }
+      .direct-booking-form,
+      .contact-grid {
+        padding: 0 1rem;
+      }
+      .direct-booking-form {
+        grid-template-columns: 1fr;
+      }
+      .booking-actions {
+        padding: 1.2rem 1rem 0;
+        align-items: flex-start;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-card {
+        padding: 1.1rem 1rem;
+      }
+      .contact-card-value {
+        font-size: .9rem;
+      }
 
       .hero-slide img {
         transform: none !important;
@@ -933,6 +1169,7 @@
       <div class="nav-book">
         <button class="nav-book-btn" id="navBookBtn">Book Now</button>
         <div class="book-dropdown" id="navBookDropdown">
+          <a href="#direct-booking" class="book-dropdown-link">Direct Book</a>
           <a href="https://www.airbnb.com/users/profile/1470733999972870542?previous_page_name=PdpHomeMarketplace" target="_blank" rel="noopener">
             <img src="Images/Logos/Airbnb.svg" alt="Airbnb" style="width:64px;" />
           </a>
@@ -1145,8 +1382,9 @@
           <div class="about-detail">
             <span class="about-detail-icon"><i data-feather="anchor"></i></span>
             <div class="about-detail-text">
-              <strong>Ferry to Corfu</strong>
-              Daily connections from Sarande Port, 35 minutes
+              <strong>Ferry to Corfu, Greece</strong>
+              Daily connections from Sarande Port,
+              <a href="https://finikas-lines.com/" target="_blank" rel="noopener" class="about-inline-link">check tickets <strong>here</strong></a>
             </div>
           </div>
         </div>
@@ -1176,7 +1414,7 @@
       <div class="about-map reveal reveal-delay-2">
         <div class="map-container">
           <iframe
-            src="https://www.google.com/maps?q=39.8827152,20.0026979&z=16&output=embed"
+            src="https://www.google.com/maps?q=39.8827152,20.0026979&z=15&output=embed"
             title="Aliko Residence Location"
             loading="lazy"
             allowfullscreen
@@ -1188,6 +1426,109 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="bottom-panels">
+      <div class="direct-booking-panel" id="direct-booking">
+        <div class="booking-panel">
+          <div class="booking-header">
+            <p class="section-label reveal">Book Direct</p>
+            <h2 class="section-title reveal reveal-delay-1">Direct Booking</h2>
+            <p class="section-body reveal reveal-delay-2">
+              Share your stay details and we will reply with availability, rates, and the best direct booking options for Aliko Residence.
+            </p>
+          </div>
+
+          <form class="direct-booking-form" id="directBookingForm">
+            <div class="booking-field reveal reveal-delay-1">
+              <label for="bookingName">Full Name</label>
+              <input class="booking-input" id="bookingName" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
+            </div>
+
+            <div class="booking-field reveal reveal-delay-2">
+              <label for="bookingEmail">Email</label>
+              <input class="booking-input" id="bookingEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="booking-field reveal reveal-delay-1">
+              <label for="bookingPhone">Phone / WhatsApp</label>
+              <input class="booking-input" id="bookingPhone" name="phone" type="tel" autocomplete="tel" placeholder="+355..." required />
+            </div>
+
+            <div class="booking-field reveal reveal-delay-2">
+              <label for="bookingStay">Accommodation</label>
+              <select class="booking-select" id="bookingStay" name="accommodation" required>
+                <option value="">Select an option</option>
+                <option value="The Penthouse">The Penthouse</option>
+                <option value="Standard Sea View">Standard Sea View</option>
+                <option value="Deluxe Sea View">Deluxe Sea View</option>
+                <option value="Deluxe Mountain and Side Sea View">Deluxe Mountain and Side Sea View</option>
+                <option value="Deluxe Mountain View">Deluxe Mountain View</option>
+                <option value="Best available option">Best available option</option>
+              </select>
+            </div>
+
+            <div class="booking-field reveal reveal-delay-1">
+              <label for="bookingCheckIn">Check-in</label>
+              <input class="booking-input" id="bookingCheckIn" name="checkin" type="date" required />
+            </div>
+
+            <div class="booking-field reveal reveal-delay-1">
+              <label for="bookingCheckOut">Check-out</label>
+              <input class="booking-input" id="bookingCheckOut" name="checkout" type="date" required />
+            </div>
+
+            <div class="booking-field reveal reveal-delay-2">
+              <label for="bookingGuests">Number of Guests</label>
+              <input class="booking-input" id="bookingGuests" name="guests" type="number" min="1" max="20" placeholder="2" required />
+            </div>
+
+            <div class="booking-field booking-field-full reveal reveal-delay-2">
+              <label for="bookingRequests">Special Requests</label>
+              <textarea class="booking-textarea" id="bookingRequests" name="requests" placeholder="Airport transfer, room preferences, arrival time, or anything else you'd like us to know."></textarea>
+            </div>
+          </form>
+
+          <div class="booking-actions reveal reveal-delay-3">
+            <p class="booking-note">
+              Submitting opens a pre-filled email to Aliko Residence so guests can send their request directly from the website.
+            </p>
+            <button type="submit" form="directBookingForm" class="booking-submit">
+              <i data-feather="send"></i> Send Booking Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-panel">
+          <div class="contact-header">
+            <p class="section-label reveal">Contact</p>
+            <h2 class="section-title reveal reveal-delay-1">Contact Us</h2>
+            <p class="section-body reveal reveal-delay-2">
+              For bookings, availability, or any questions about your stay, reach out directly and we will get back to you.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <a href="mailto:alikoresidence@gmail.com" class="contact-card reveal reveal-delay-1">
+              <span class="contact-card-icon"><i data-feather="mail"></i></span>
+              <div>
+                <div class="contact-card-label">Email</div>
+                <div class="contact-card-value">alikoresidence@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/355698250613" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-2">
+              <span class="contact-card-icon"><i data-feather="message-circle"></i></span>
+              <div>
+                <div class="contact-card-label">WhatsApp</div>
+                <div class="contact-card-value">+355 69 825 0613</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="about-bottom">
@@ -1275,10 +1616,80 @@
       const isOpen = navBookDropdown.classList.toggle('open');
       navBookBtn.classList.toggle('is-open', isOpen);
     });
+    navBookDropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navBookDropdown.classList.remove('open');
+        navBookBtn.classList.remove('is-open');
+      });
+    });
+    const directBookLink = navBookDropdown.querySelector('a[href="#direct-booking"]');
+    if (directBookLink) {
+      directBookLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('direct-booking').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
     document.addEventListener('click', () => {
       navBookDropdown.classList.remove('open');
       navBookBtn.classList.remove('is-open');
     });
+
+    /* ── Direct booking form ───────────────────────────────── */
+    const directBookingForm = document.getElementById('directBookingForm');
+    const bookingCheckIn = document.getElementById('bookingCheckIn');
+    const bookingCheckOut = document.getElementById('bookingCheckOut');
+
+    if (bookingCheckIn && bookingCheckOut) {
+      const today = new Date();
+      const todayStr = today.toISOString().split('T')[0];
+      bookingCheckIn.min = todayStr;
+      bookingCheckOut.min = todayStr;
+
+      bookingCheckIn.addEventListener('change', () => {
+        bookingCheckOut.min = bookingCheckIn.value || todayStr;
+        if (bookingCheckOut.value && bookingCheckOut.value <= bookingCheckIn.value) {
+          const nextDay = new Date(bookingCheckIn.value);
+          nextDay.setDate(nextDay.getDate() + 1);
+          bookingCheckOut.value = nextDay.toISOString().split('T')[0];
+        }
+      });
+    }
+
+    if (directBookingForm) {
+      directBookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(directBookingForm);
+        const name = formData.get('name')?.toString().trim() || '';
+        const email = formData.get('email')?.toString().trim() || '';
+        const phone = formData.get('phone')?.toString().trim() || '';
+        const accommodation = formData.get('accommodation')?.toString().trim() || '';
+        const guests = formData.get('guests')?.toString().trim() || '';
+        const checkin = formData.get('checkin')?.toString().trim() || '';
+        const checkout = formData.get('checkout')?.toString().trim() || '';
+        const requests = formData.get('requests')?.toString().trim() || 'None specified';
+
+        const subject = encodeURIComponent(`Direct Booking Inquiry - ${name || 'Guest'}`);
+        const body = encodeURIComponent(
+`Hello Aliko Residence,
+
+I would like to make a direct booking inquiry.
+
+Full name: ${name}
+Email: ${email}
+Phone / WhatsApp: ${phone}
+Accommodation: ${accommodation}
+Number of guests: ${guests}
+Check-in: ${checkin}
+Check-out: ${checkout}
+Special requests:
+${requests}
+`
+        );
+
+        window.location.href = `mailto:alikoresidence@gmail.com?subject=${subject}&body=${body}`;
+      });
+    }
 
     /* ── Scroll Reveal ─────────────────────────────────────── */
     const revealObs = new IntersectionObserver((entries) => {

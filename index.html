@@ -198,6 +198,7 @@
       width: 100vw;
       height: 100vh;
       overflow: hidden;
+      cursor: pointer;
     }
     .hero-slide {
       position: absolute;
@@ -1738,8 +1739,18 @@
     heroSlides.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => goHeroSlide(i));
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goHeroSlide(i);
+        restartHeroTimer();
+      });
       dotsWrap.appendChild(dot);
+    });
+
+    /* Click anywhere on the hero advances to the next slide */
+    document.getElementById('hero').addEventListener('click', () => {
+      goHeroSlide((heroIndex + 1) % heroSlides.length);
+      restartHeroTimer();
     });
 
     function escapeHtml(str) {
@@ -1768,7 +1779,11 @@
         }
       }, 500);
     }
-    setInterval(() => goHeroSlide((heroIndex + 1) % heroSlides.length), 5500);
+    let heroTimer = setInterval(() => goHeroSlide((heroIndex + 1) % heroSlides.length), 5500);
+    function restartHeroTimer() {
+      clearInterval(heroTimer);
+      heroTimer = setInterval(() => goHeroSlide((heroIndex + 1) % heroSlides.length), 5500);
+    }
 
     /* ── Nav: scroll + logo swap ───────────────────────────── */
     const navbar  = document.getElementById('navbar');
